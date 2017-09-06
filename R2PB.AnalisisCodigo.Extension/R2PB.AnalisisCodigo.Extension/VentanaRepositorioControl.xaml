@@ -1,0 +1,99 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:R2PB.AnalisisCodigo.Extension"
+             x:Class="R2PB.AnalisisCodigo.Extension.VentanaRepositorioControl"
+             Background="{DynamicResource VsBrush.Window}"
+                Foreground="{DynamicResource VsBrush.WindowText}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="MyToolWindow">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyleNoHighlighting" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderBrush="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Resources/icono.png"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontFamily" Value="BrowalliaUPC"/>
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="Foreground" Value="GhostWhite"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="10,0,-609,39" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="793*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="106*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="CodeMiner" HorizontalAlignment="Left" Margin="409,26,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="18" Height="34" Width="288"/>
+        <RadioButton x:Name="radioButton" Content="Github" HorizontalAlignment="Left" Margin="112,64,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="14" Height="18" Width="66"/>
+        <Label x:Name="lblURL" Content="Ingrese URL:" HorizontalAlignment="Left" Margin="125,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.428,0.744" FontFamily="Segoe UI Black" FontSize="13" Height="29" Width="124"/>
+        <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="17" Margin="252,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" RenderTransformOrigin="0.5,0.5" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Segoe UI Black" CaretBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.053"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="button" Style="{StaticResource ButtonStyleNoHighlighting}" Margin="762,114,0,0" VerticalAlignment="Top" Height="27" RenderTransformOrigin="0.433,1.55" Click="Analice" HorizontalAlignment="Left" Width="30">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.52"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label x:Name="lblWorkSpace" Content="Ingrese Workspace:" HorizontalAlignment="Left" Margin="79,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.428,0.744" FontFamily="Segoe UI Black" FontSize="13" Height="30" Width="172">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.309"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="txtWorkspace" HorizontalAlignment="Left" Height="17" Margin="252,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="505" RenderTransformOrigin="0.5,0.5" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Segoe UI Black" CaretBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderThickness="1">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.053"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Viewbox x:Name="circularBox" Width="140"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" Margin="0,50,447,0" Visibility="Hidden">
+            <local:CircularProgressBar Height="42" Width="168" />
+        </Viewbox>
+    </Grid>
+</UserControl>

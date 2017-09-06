@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h" />
+
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidMenuInicioPackage">
+    <Menus>
+      <Menu guid="guidMenuInicioPackageCmdSet" id="TopLevelMenu" priority="0x700" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+        <Strings>
+          <ButtonText>CodeMiner</ButtonText>
+          <CommandName>CodeMiner</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+    
+    <Groups>
+      <Group guid="guidMenuInicioPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidMenuInicioPackageCmdSet" id="TopLevelMenu" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidMenuInicioPackageCmdSet" id="cmdidVentanaRepositorioCommand" priority="0x0100" type="Button">
+        <Parent guid="guidMenuInicioPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages1" id="bmpPic1" />
+        <Strings>
+          <ButtonText>CodeMiner</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\MenuInicio.png" usedList="bmpPic1" />
+      <Bitmap guid="guidImages1" href="Resources\VentanaRepositorioCommand.png" usedList="bmpPic1" />
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidMenuInicioPackage" value="{fe06540a-ccb9-4940-bac3-901c90c78cdb}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidMenuInicioPackageCmdSet" value="{54026907-5bbd-495e-bd74-02bc6852faa8}">
+      <IDSymbol name="TopLevelMenu" value="0x1021" />
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol value="4131" name="cmdidVentanaRepositorioCommand" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{94fe87c7-41f5-45f9-869b-3b98a313af77}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{9cba80c2-6570-406f-81f2-d06fb25d5ac1}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
